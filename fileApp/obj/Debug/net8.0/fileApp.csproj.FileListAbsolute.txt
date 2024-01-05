@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\fileApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\fileApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\fileApp.AssemblyInfo.cs
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\fileApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\fileApp.dll
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\refint\fileApp.dll
+C:\Users\User\Desktop\fileApp\obj\Debug\net8.0\fileApp.pdb

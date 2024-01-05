@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\SerialApp\bin\Debug\net6.0\SerialApp.exe
+C:\Users\User\Desktop\SerialApp\bin\Debug\net6.0\SerialApp.deps.json
+C:\Users\User\Desktop\SerialApp\bin\Debug\net6.0\SerialApp.runtimeconfig.json
+C:\Users\User\Desktop\SerialApp\bin\Debug\net6.0\SerialApp.dll
+C:\Users\User\Desktop\SerialApp\bin\Debug\net6.0\SerialApp.pdb
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.AssemblyInfo.cs
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.dll
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\refint\SerialApp.dll
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.pdb
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\SerialApp.genruntimeconfig.cache
+C:\Users\User\Desktop\SerialApp\obj\Debug\net6.0\ref\SerialApp.dll

@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\SerialApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\SerialApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\SerialApp.AssemblyInfo.cs
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\SerialApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\SerialApp.dll
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\refint\SerialApp.dll
+C:\Users\User\Desktop\SerialApp\obj\Debug\net8.0\SerialApp.pdb

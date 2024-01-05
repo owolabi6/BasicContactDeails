@@ -1,0 +1,1 @@
+JConsoleApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null Student rollnoname e sonoo

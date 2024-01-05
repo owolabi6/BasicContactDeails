@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\farmApp\bin\Debug\net7.0\farmApp.exe
+C:\Users\User\Desktop\farmApp\bin\Debug\net7.0\farmApp.deps.json
+C:\Users\User\Desktop\farmApp\bin\Debug\net7.0\farmApp.runtimeconfig.json
+C:\Users\User\Desktop\farmApp\bin\Debug\net7.0\farmApp.dll
+C:\Users\User\Desktop\farmApp\bin\Debug\net7.0\farmApp.pdb
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.AssemblyInfo.cs
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.dll
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\refint\farmApp.dll
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.pdb
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\farmApp.genruntimeconfig.cache
+C:\Users\User\Desktop\farmApp\obj\Debug\net7.0\ref\farmApp.dll
