@@ -10,11 +10,7 @@ namespace BasicContactList
         private IEnumerable<object> lines;
 
 
-#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
-
-        public void AddContact(string name, string phoneNumber, string? email, ContactType contactType)
-#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
-
+        public void AddContact(string name, string phoneNumber, string email, ContactType contactType)
         {
             try
             {
@@ -43,7 +39,7 @@ namespace BasicContactList
             Contacts.Add(contact);
             using (StreamWriter writer = File.AppendText("Contact.txt"))
             {
-                writer.WriteLine($"Name:  {name}\t" + $"Phone Number: {phoneNumber}\t" + $"Email: {email}\t"+ $"Contact Type: {contactType}"+ $"it was updated at:  {DateTime.Now}\t" );
+                writer.WriteLine($"Name:  {name}\t" + $"Phone Number: {phoneNumber}\t" + $"Email: {email}\t"+ $"Contact Type: {contactType}" );
             }
             Console.WriteLine("Contact added successfully.");
             }
@@ -87,23 +83,20 @@ namespace BasicContactList
         return;
     }
 
-    Contacts.Remove(contact); // Remove contact from the in-memory list
+    Contacts.Remove(contact);
 
     string filePath = "contact.txt";
 
     try
     {
-        // Read the content of the file using StreamReader
         var lines = new List<string>();
         
         using (StreamReader reader = new StreamReader(filePath))
         {
-            // Read all lines into a list
             string line;
 
             while ((line = reader.ReadLine()) != null)
             {
-                // Modify the content as needed
                 if (!line.Contains(phoneNumber))
                 {
                     lines.Add(line);
@@ -111,7 +104,6 @@ namespace BasicContactList
             }
         }
 
-        // Write the modified lines back to the file
         using (StreamWriter writer = new StreamWriter(filePath))
         {
             foreach (var modifiedLine in lines)
@@ -135,12 +127,12 @@ namespace BasicContactList
         {
             try
             {
-                string savedContact = "contact.txt";
+                //string filePath = "contact.txt";
                 using (StreamReader existngContacts = new StreamReader("contact.txt"))
                 {
                     while (!existngContacts.EndOfStream)
                     {
-                        string? show = existngContacts.ReadLine();
+                        string show = existngContacts.ReadLine();
                         Console.WriteLine(show);
                     }
                 }
@@ -173,7 +165,6 @@ namespace BasicContactList
         
             public void UpdateContact(string phoneNumber, string name, string email)
 {
-    // Find the contact in the in-memory list based on the provided phone number
     var contact = FindContact(phoneNumber);
 
     
@@ -182,8 +173,6 @@ namespace BasicContactList
         Console.WriteLine("Contact does not exist!");
         return;
     }
-
-    // Update the contact properties
     contact.Name = name;
     contact.Email = email;
 
