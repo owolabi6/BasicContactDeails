@@ -7,7 +7,14 @@ namespace BasicContactList
     internal sealed class ContactManager : IContactManager
     {
         public static List<Contact> Contacts = new();
+        private IEnumerable<object> lines;
+
+
+#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+
         public void AddContact(string name, string phoneNumber, string? email, ContactType contactType)
+#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+
         {
             try
             {
@@ -36,7 +43,7 @@ namespace BasicContactList
             Contacts.Add(contact);
             using (StreamWriter writer = File.AppendText("Contact.txt"))
             {
-                writer.WriteLine(name +"\t" + phoneNumber + "\t" + email + "\t" + contactType + "\n" );
+                writer.WriteLine($"Name:  {name}\t" + $"Phone Number: {phoneNumber}\t" + $"Email: {email}\t"+ $"Contact Type: {contactType}"+ $"it was updated at:  {DateTime.Now}\t" );
             }
             Console.WriteLine("Contact added successfully.");
             }
@@ -51,7 +58,7 @@ namespace BasicContactList
         }
 
         
-         public Contact? FindContact(string phoneNumber)
+         public Contact FindContact(string phoneNumber)
         {
             return Contacts.Find(c => c.PhoneNumber == phoneNumber);
         }
@@ -70,7 +77,7 @@ namespace BasicContactList
             }
         }
 
-    public void DeleteContact(string phoneNumber)
+ public void DeleteContact(string phoneNumber)
 {
     var contact = FindContact(phoneNumber);
 
@@ -80,22 +87,23 @@ namespace BasicContactList
         return;
     }
 
-    Contacts.Remove(contact);
+    Contacts.Remove(contact); // Remove contact from the in-memory list
 
     string filePath = "contact.txt";
 
     try
     {
         // Read the content of the file using StreamReader
+        var lines = new List<string>();
+        
         using (StreamReader reader = new StreamReader(filePath))
         {
             // Read all lines into a list
-            var lines = new List<string>();
             string line;
 
             while ((line = reader.ReadLine()) != null)
             {
-                // Modify the content as needed (e.g., skip lines to be deleted)
+                // Modify the content as needed
                 if (!line.Contains(phoneNumber))
                 {
                     lines.Add(line);
@@ -103,11 +111,10 @@ namespace BasicContactList
             }
         }
 
-        // Write the modified content back to the file using StreamWriter
-        var liness = new List<string>();
+        // Write the modified lines back to the file
         using (StreamWriter writer = new StreamWriter(filePath))
         {
-            foreach (var modifiedLine in liness)
+            foreach (var modifiedLine in lines)
             {
                 writer.WriteLine(modifiedLine);
             }
@@ -117,13 +124,14 @@ namespace BasicContactList
     }
     catch (Exception ex)
     {
-        // Handle the exception appropriately (e.g., log it, display a message)
         Console.WriteLine($"Error while performing file operation: {ex.Message}");
-        // Re-throw the exception to propagate it further if necessary
         throw new contactException($"Error while performing file operation: {ex.Message}");
     }
 }
+
+
         public void GetAllContacts()
+
         {
             try
             {
@@ -162,36 +170,38 @@ namespace BasicContactList
 
         }
 
-        public void UpdateContact(string phoneNumber, string name, string email)
+        
+            public void UpdateContact(string phoneNumber, string name, string email)
 {
+    // Find the contact in the in-memory list based on the provided phone number
     var contact = FindContact(phoneNumber);
 
+    
     if (contact is null)
     {
         Console.WriteLine("Contact does not exist!");
         return;
     }
 
+    // Update the contact properties
     contact.Name = name;
     contact.Email = email;
 
     string filePath = "contact.txt";
 
     try
-    {
-        // Read the content of the file using StreamReader
+    {    
+        var lines = new List<string>();
+
         using (StreamReader reader = new StreamReader(filePath))
         {
-            // Read all lines into a list
-            var lines = new List<string>();
             string line;
 
             while ((line = reader.ReadLine()) != null)
             {
-                // Modify the content as needed (e.g., update the specific contact)
+
                 if (line.Contains(phoneNumber))
                 {
-                    // Update the line with the new contact information
                     string updatedLine = $"{name}\t{phoneNumber}\t{email}\t{contact.ContactType}\t{contact.CreatedAt}";
                     lines.Add(updatedLine);
                 }
@@ -202,12 +212,9 @@ namespace BasicContactList
             }
         }
 
-        // Write the modified content back to the file using StreamWriter
-        var lins = new List<string>();
         using (StreamWriter writer = new StreamWriter(filePath))
         {
-            
-            foreach (var modifiedLine in lins)
+            foreach (var modifiedLine in lines)
             {
                 writer.WriteLine(modifiedLine);
             }
@@ -217,27 +224,12 @@ namespace BasicContactList
     }
     catch (Exception ex)
     {
-        // Handle the exception appropriately (e.g., log it, display a message)
+        
         Console.WriteLine($"Error while performing file operation: {ex.Message}");
-        // Re-throw the exception to propagate it further if necessary
+       
         throw new contactException($"Error while performing file operation: {ex.Message}");
     }
 }
-
-        // public void UpdateContact(string phoneNumber, string name, string email)
-        // {
-        //     var contact = FindContact(phoneNumber);
-
-        //     if (contact is null)
-        //     {
-        //         Console.WriteLine("Contact does not exist!");
-        //         return;
-        //     }
-
-        //     contact.Name = name;
-        //     contact.Email = email;
-        //     Console.WriteLine("Contact updated successfully.");
-        // }
 
         private void Print(Contact contact)
         {
